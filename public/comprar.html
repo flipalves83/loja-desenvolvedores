@@ -1,0 +1,69 @@
+<!-- index.html -->
+<!doctype html>
+
+<html ng-app="listaDesenvolvedores">
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Compras de Desenvolvedores</title>
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <style>
+        html                    { overflow-y:scroll; }
+        body                    { padding-top:50px; }
+        #lista-desenvolvedores  { margin-bottom:30px; }
+        form button             { margin-top: 25px; }
+        form .form-group:first-child { padding-left: 0; }
+    </style>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <script src="angularApp.js"></script>
+
+</head>
+
+<body ng-controller="mainController">
+<div class="container">
+
+    <div class="jumbotron text-center">
+        <h3>Compra de Desenvolvedores <span class="label label-info">{{ desenvolvedor.length }}</span></h3>
+    </div>
+
+    <div id="lista-desenvolvedores">
+        <table class="table table-striped">
+
+            <tr>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Valor</th>
+                <th>Qtd. Horas</th>
+            </tr>
+
+            <tr ng-repeat="desenvolvedor in desenvolvedores">
+                <td>{{ desenvolvedor.nome }}</td>
+                <td>{{ desenvolvedor.email }}</td>
+                <td>{{ desenvolvedor.valor }}</td>
+                <td>{{ desenvolvedor.qtdhoras }}</td>
+            </tr>
+
+        </table>
+    </div>
+
+    <div id="desenvolvedor-form">
+        <hr>
+        <form>
+            <div class="form-group col-md-4">
+                <h3>Valor total a pagar: R$ 100.00</h3>
+                <button type="submit" class="btn btn-success" ng-click="criarDesenvolvedor()">Finalizar Pedido</button>
+                <button type="submit" class="btn btn-danger" ng-click="criarDesenvolvedor()">Cancelar Pedido</button>
+
+            </div>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>

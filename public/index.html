@@ -1,0 +1,95 @@
+<!-- index.html -->
+<!doctype html>
+
+<html ng-app="listaDesenvolvedores">
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Lista de Desenvolvedores</title>
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <style>
+        html                    { overflow-y:scroll; }
+        body                    { padding-top:50px; }
+        #lista-desenvolvedores  { margin-bottom:30px; }
+        form button             { margin-top: 25px; }
+        form .form-group:first-child { padding-left: 0; }
+    </style>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <script src="angularApp.js"></script>
+
+</head>
+
+<body ng-controller="mainController">
+<div class="container">
+
+    <div class="jumbotron text-center">
+        <h3>Lista de Desenvolvedores <span class="label label-info">{{ desenvolvedor.length }}</span></h3>
+    </div>
+
+    <div id="lista-desenvolvedores">
+        <table class="table table-striped">
+
+            <tr>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Valor</th>
+                <th>Qtd. Horas</th>
+                <th>Opções</th>
+            </tr>
+
+            <tr ng-repeat="desenvolvedor in desenvolvedores">
+                <td>{{ desenvolvedor.nome }}</td>
+                <td>{{ desenvolvedor.email }}</td>
+                <td>{{ desenvolvedor.valor }}</td>
+                <td>{{ desenvolvedor.qtdhoras }}</td>
+                <td>
+                    <button type="button" class="btn btn-default" ng-click="editarDesenvolvedor(desenvolvedor._id)">Editar</button>
+                    <button type="button" class="btn btn-primary" ng-click="deletarDesenvolvedor(desenvolvedor._id)">Remover</button>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+
+    <div id="desenvolvedor-form">
+        <hr>
+        <form>
+            <div class="form-group col-md-3">
+                <label for="nomeDesenvolvedor">Nome</label>
+                <input type="text" class="form-control" id="nomeDesenvolvedor" placeholder="Nome Sobrenome" ng-model="formDesenvolvedor.nome">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="emailDesenvolvedor">E-mail</label>
+                <input type="text" class="form-control" id="emailDesenvolvedor" placeholder="exemplo@exemplo.com" ng-model="formDesenvolvedor.email">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="valorDesenvolvedor">Valor</label>
+                <input type="text" class="form-control" id="valorDesenvolvedor" placeholder="" ng-model="formDesenvolvedor.valor">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="qtdhorasDesenvolvedor">Qtd. Horas</label>
+                <input type="text" class="form-control" id="qtdhorasDesenvolvedor" placeholder="" ng-model="formDesenvolvedor.qtdhoras">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="cupomdesconto">Cupom de Desconto</label>
+                <input type="text" class="form-control" id="cupomdesconto" placeholder="R$" >
+            </div>
+
+            <div class="form-group col-md-4">
+                <!-- createToDo() WILL CREATE NEW TODOS -->
+                <button type="submit" class="btn btn-primary" ng-click="criarDesenvolvedor()">Adicionar no Carrinho</button>
+                <button type="submit" class="btn btn-info" ng-click="atualizarDesenvolvedor()">Atualizar</button>
+                <button type="submit" onclick="window.location = 'comprar.html'" class="btn btn-success" ng-click="">Comprar</button>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>
