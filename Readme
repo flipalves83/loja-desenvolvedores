@@ -1,0 +1,30 @@
+## Tarefas e priorização
+
+ 1) *** SUBSTITUIR OS INPUTS DE TEXTO POR UMA LISTA DE DESENVOLVEDORES COM NOME, FOTO, PREÇO E UM BOTÃO DE "ADICIONAR AO CARRINHO".
+    Prioridade 1: Partindo do exemplo, tomei como prioridade a substituição dos inputs de texto da lista para visualizar melhor os campos que iria trabalhar no frond-end.
+                  no desafio não inclui foto devido algumas dificildades com as tecnologias utilizadas, mas para um próximo desafio estarei buscando maiores informações para trablhar com tipos de campos imagens.
+
+ 2) *** PERMITIR A ESCOLHA DE QUANTIDADE DE HORAS CONTRATADAS DE CADA DESENVOLVEDOR.
+    Prioridade 2: Inclui um novo input para a quantidade de horas contratadas vinculada ao desenvolvedor, a prioridade se da por conta de logo após inclusão deste campo,
+                  será necessario realizar calculos relacionados a valor total desenvolvedor por hora, não implementado.
+
+ 3) *** PERMITIR A ADIÇÃO DE UM CUPOM DE DESCONTO QUE ALTERA O PREÇO TOTAL DA COMPRA. UTILIZE O CÓDIGO "SHIPIT".
+    Prioridade 3: Incluido um novo input para cupom de desconto, neste novo input, poderá ser calculado o valor total com desconto da compra,
+                  obs: devido pouca experiencia na utilização de ajax, e angularJS não consegui implementar em sua totalidade a funcionalidade, estarei melhorando.
+
+ 4) *** ADICIONAR UM BOTÃO DE "COMPRAR" QUE LEVA O USUÁRIO A UMA PÁGINA DE PEDIDO CONFIRMADO.
+    Prioridade 4: Incluido novo botão de compra para levar usuário a página onde irá efetivar o pedido.
+
+==========================================================================================================================================================================
+
+## Server side
+
+A API REST foi definida utilizando NodeJS, utilizando banco de dados mongoDB, utilizei desta forma, seguindo alguns exemplos encontrados na web,
+lembrando, como havia informado em e-mails anteriores, não possuo dominio desta tecnologia, e passei a estuda-las para implementar o desafio.
+
+## Client side
+
+Para client side, foi implementado seguindo HTML renderizado server-side e formulários, bootstrap, css,
+seguindo o modelo exemplo disponilizado, também foi utilizado a API REST juntamente com AJAX e AngularJS.
+
+==========================================================================================================================================================================
